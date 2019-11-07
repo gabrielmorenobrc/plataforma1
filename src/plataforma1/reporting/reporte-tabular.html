@@ -1,0 +1,57 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css" media="print">
+        @page {
+            margin: 0cm;
+            size: landscape;
+            font-family: courier-new;
+        }
+    </style>
+</head>
+<#escape x as x?html?replace("\n","
+<
+br/>")>
+<body>
+<div><span style="font-size: x-large; font-weight: bold;">${data.title}</span><span> (${.now?string["dd/MM/yyyy, HH:mm:ss"]})</span>
+</div>
+<br></br>
+<table style="width: 95%; font-size: x-small">
+    <thead>
+    <tr>
+        <#list data.columns as col>
+            <th style="${col.widthAsStyle}border-bottom: 1px solid black; vertical-align: bottom; text-align: center;">
+                ${col.title}
+            </th>
+        </#list>
+    </tr>
+    </thead>
+    <tbody>
+    <#list data.rows as renglon>
+        <tr>
+            <#list renglon as field>
+                <td style="${field.widthAsStyle}${field.wrapAsStyle}${field.whiteSpaceAsStyle}text-align: ${field.align}">
+                    <#if field.string??>${field.string}</#if>
+                </td>
+            </#list>
+        </tr>
+    </#list>
+    </tbody>
+    <tfoot>
+    <tr>
+        <#list data.totals as field>
+            <#if field?has_content>
+                <td style="width: auto; word-wrap: break-word; text-align: ${field.align}; font-weight: bold; border-top: 1px solid black">
+                    <#if field.string??>${field.string}</#if>
+                </td>
+                <#else>
+                    <td style="width: auto; font-weight: bold; border-top: 1px solid black"></td>
+            </#if>
+        </#list>
+    </tr>
+    </tfoot>
+</table>
+</body>
+</#escape>
+</html>
+

@@ -1,0 +1,48 @@
+<project name="de">
+
+    <import file="build.xml"/>
+
+    <patternset id="compiler.resources">
+        <exclude name="**/?*.java"/>
+        <exclude name="**/?*.form"/>
+        <exclude name="**/?*.class"/>
+        <exclude name="**/?*.groovy"/>
+        <exclude name="**/?*.scala"/>
+        <exclude name="**/?*.flex"/>
+        <exclude name="**/?*.kt"/>
+        <exclude name="**/?*.clj"/>
+        <include name="**/?*.css"/>
+        <include name="**/?*.js"/>
+        <include name="**/?*.svg"/>
+        <include name="**/?*.woff"/>
+        <include name="**/?*.ttf"/>
+        <include name="**/?*.gif"/>
+        <include name="**/?*.png"/>
+        <include name="**/?*.xml"/>
+        <include name="**/?*.html"/>
+        <include name="**/?*.json"/>
+        <include name="**/?*.woff2"/>
+        <include name="**/?*.eot"/>
+        <include name="**/?*.otf"/>
+    </patternset>
+
+    <target name="deploy-jar" depends="all" description="deploy jar">
+
+        <delete dir="dist/jar" failonerror="true"/>
+
+        <copy todir="out/production/plataforma1/META-INF" failonerror="true">
+            <fileset dir="src/META-INF" excludes="beans*.*"></fileset>
+        </copy>
+
+        <zip destfile="dist/jar/lib/plataforma1.jar"
+             basedir="out/production/plataforma1"/>
+
+        <copy todir="../lib/plataforma/1" failonerror="true">
+            <fileset dir="dist/jar/lib"></fileset>
+        </copy>
+
+
+    </target>
+
+
+</project>
