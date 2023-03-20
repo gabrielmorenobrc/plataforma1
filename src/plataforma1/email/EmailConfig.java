@@ -18,4 +18,6 @@ public interface EmailConfig {
     boolean isDisableSmtpPlainAuth();
 
     boolean isUseSSL();
+
+    boolean isUseStarttls();
 }

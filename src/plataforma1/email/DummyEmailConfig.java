@@ -38,4 +38,9 @@ public class DummyEmailConfig implements EmailConfig {
     public boolean isUseSSL() {
         return false;
     }
+
+    @Override
+    public boolean isUseStarttls() {
+        return false;
+    }
 }
