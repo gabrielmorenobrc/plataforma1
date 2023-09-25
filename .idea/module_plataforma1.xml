@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_plataforma1" default="compile.module.plataforma1">
+  <dirname property="module.plataforma1.basedir" file="${ant.file.module_plataforma1}"/>
+  
+  <property name="module.jdk.home.plataforma1" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.plataforma1" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.plataforma1" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.plataforma1" value="-encoding UTF-8 -source 12 -target 12 ${compiler.args}"/>
+  
+  <property name="plataforma1.output.dir" value="${module.plataforma1.basedir}/../out/production/plataforma1"/>
+  <property name="plataforma1.testoutput.dir" value="${module.plataforma1.basedir}/../out/test/plataforma1"/>
+  
+  <path id="plataforma1.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="plataforma1.module.production.classpath">
+    <path refid="${module.jdk.classpath.plataforma1}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="plataforma1.runtime.production.module.classpath">
+    <pathelement location="${plataforma1.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="plataforma1.module.classpath">
+    <path refid="${module.jdk.classpath.plataforma1}"/>
+    <pathelement location="${plataforma1.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="plataforma1.runtime.module.classpath">
+    <pathelement location="${plataforma1.testoutput.dir}"/>
+    <pathelement location="${plataforma1.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.plataforma1">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.plataforma1">
+    <patternset refid="excluded.from.module.plataforma1"/>
+  </patternset>
+  
+  <path id="plataforma1.module.sourcepath">
+    <dirset dir="${module.plataforma1.basedir}/../../plataforma1">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.plataforma1" depends="compile.module.plataforma1.production,compile.module.plataforma1.tests" description="Compile module plataforma1"/>
+  
+  <target name="compile.module.plataforma1.production" depends="register.custom.compilers" description="Compile module plataforma1; production classes">
+    <mkdir dir="${plataforma1.output.dir}"/>
+    <javac2 destdir="${plataforma1.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.plataforma1}/javac">
+      <compilerarg line="${compiler.args.plataforma1}"/>
+      <bootclasspath refid="plataforma1.module.bootclasspath"/>
+      <classpath refid="plataforma1.module.production.classpath"/>
+      <src refid="plataforma1.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.plataforma1"/>
+    </javac2>
+    
+    <copy todir="${plataforma1.output.dir}">
+      <fileset dir="${module.plataforma1.basedir}/../src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.plataforma1.tests" depends="register.custom.compilers,compile.module.plataforma1.production" description="compile module plataforma1; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.plataforma1" description="cleanup module">
+    <delete dir="${plataforma1.output.dir}"/>
+    <delete dir="${plataforma1.testoutput.dir}"/>
+  </target>
+</project>

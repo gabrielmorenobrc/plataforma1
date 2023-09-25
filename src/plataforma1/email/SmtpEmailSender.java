@@ -1,17 +1,15 @@
 package plataforma1.email;
 
-import javax.activation.DataHandler;
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Alternative;
-import javax.inject.Inject;
-import javax.mail.Address;
-import javax.mail.Multipart;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
+import jakarta.activation.DataHandler;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.inject.Alternative;
+import jakarta.inject.Inject;
+import jakarta.mail.*;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeBodyPart;
+import jakarta.mail.internet.MimeMessage;
+import jakarta.mail.internet.MimeMultipart;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
@@ -22,7 +20,6 @@ import java.util.Properties;
 @Alternative
 @ApplicationScoped
 public class SmtpEmailSender implements EmailSender {
-
     private static final String SSL_FACTORY = "javax.net.ssl.SSLSocketFactory";
     private Session session;
     @Inject
@@ -44,7 +41,7 @@ public class SmtpEmailSender implements EmailSender {
             String recipient = recipients.get(i);
             addresses[i] = new InternetAddress(recipient);
         }
-        mimeMessage.setRecipients(javax.mail.Message.RecipientType.TO, addresses);
+        mimeMessage.setRecipients(Message.RecipientType.TO, addresses);
         String replyTo = emailMessage.getReplyTo();
         if (replyTo != null) {
             mimeMessage.setReplyTo(new Address[]{new InternetAddress(emailMessage.getReplyTo())});
@@ -92,6 +89,7 @@ public class SmtpEmailSender implements EmailSender {
                 properties.put("mail.smtp.auth", emailConfig.isSmtpAuth());
                 properties.put("mail.smtp.auth.plain.disable", emailConfig.isDisableSmtpPlainAuth());
             }
+            properties.put("mail.smtp.ssl.trust", "*");
             session = Session.getInstance(properties);
         }
     }

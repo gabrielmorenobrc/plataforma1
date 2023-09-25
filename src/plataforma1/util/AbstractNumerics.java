@@ -112,9 +112,9 @@ public abstract class AbstractNumerics implements Numerics {
     @Override
     public Integer safeParseInteger(String str) {
         try {
-            return new Integer(str);
+            return Integer.valueOf(str);
         } catch (Throwable t) {
-            return new Integer(0);
+            return 0;
         }
     }
 

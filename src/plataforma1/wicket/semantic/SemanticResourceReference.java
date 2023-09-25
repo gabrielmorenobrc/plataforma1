@@ -7,10 +7,8 @@ import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.apache.wicket.resource.JQueryResourceReference;
 
 import java.util.Arrays;
+import java.util.List;
 
-/**
-
- */
 public class SemanticResourceReference extends JavaScriptResourceReference {
 
     private static final SemanticResourceReference instance = new SemanticResourceReference();
@@ -24,8 +22,8 @@ public class SemanticResourceReference extends JavaScriptResourceReference {
     }
 
     @Override
-    public Iterable<? extends HeaderItem> getDependencies() {
-        JavaScriptReferenceHeaderItem jquery = JavaScriptHeaderItem.forReference(JQueryResourceReference.get());
+    public List<HeaderItem> getDependencies() {
+        JavaScriptReferenceHeaderItem jquery = JavaScriptHeaderItem.forReference(JQueryResourceReference.getV3());
         CssReferenceHeaderItem style = CssHeaderItem.forReference(new CssResourceReference(SemanticResourceReference.class, "resources/semantic.min.css"));
         CssReferenceHeaderItem semanticOverrides = CssHeaderItem.forReference(new CssResourceReference(SemanticResourceReference.class, "resources/semantic-overrides.css"));
         CssReferenceHeaderItem select2Style = CssHeaderItem.forReference(new CssResourceReference(ApplicationSettings.class, "res/select2.css"));

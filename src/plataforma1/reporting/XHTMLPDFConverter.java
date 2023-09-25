@@ -1,4 +1,3 @@
-
 package plataforma1.reporting;
 
 import org.xhtmlrenderer.pdf.ITextRenderer;

@@ -1,14 +1,12 @@
 package plataforma1.services;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
+
 import java.io.Serializable;
 
-/**
-
- */
 @MappedSuperclass
 public class AbstractEntity implements Serializable {
 
@@ -40,10 +38,7 @@ public class AbstractEntity implements Serializable {
             return false;
         }
         final AbstractEntity other = (AbstractEntity) obj;
-        if (this.getId() != other.getId() && (this.getId() == null || !this.getId().equals(other.getId()))) {
-            return false;
-        }
-        return true;
+        return this.getId().equals(other.getId()) || (this.getId() != null && this.getId().equals(other.getId()));
     }
 
     @Override

@@ -1,6 +1,7 @@
 package plataforma1.services;
 
-import javax.interceptor.InterceptorBinding;
+import jakarta.interceptor.InterceptorBinding;
+
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 

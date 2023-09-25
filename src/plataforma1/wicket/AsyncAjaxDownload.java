@@ -9,6 +9,7 @@ import org.apache.wicket.util.resource.AbstractResourceStreamWriter;
 
 import java.io.OutputStream;
 import java.io.Serializable;
+import java.util.Optional;
 
 /**
  * Created by gmoreno on 15/02/2017.
@@ -25,8 +26,10 @@ public abstract class AsyncAjaxDownload extends AbstractAjaxBehavior implements 
         String url = getCallbackUrl().toString();
         url = url + (url.contains("?") ? "&" : "?");
         url = url + "antiCache=" + System.currentTimeMillis();
-        AjaxRequestTarget ajaxRequestTarget = RequestCycle.get().find(AjaxRequestTarget.class);
-        ajaxRequestTarget.appendJavaScript("setTimeout(\"window.location.href='" + url + "'\", 100);");
+        Optional<AjaxRequestTarget> ajaxRequestTarget = RequestCycle.get().find(AjaxRequestTarget.class);
+        if (ajaxRequestTarget.isPresent()) {
+            ajaxRequestTarget.get().appendJavaScript("setTimeout(\"window.location.href='" + url + "'\", 100);");
+        }
     }
 
     @Override

@@ -2,7 +2,7 @@ package plataforma1.wicket.semantic;
 
 import org.apache.wicket.Page;
 
-import javax.enterprise.context.SessionScoped;
+import jakarta.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.HashMap;
 

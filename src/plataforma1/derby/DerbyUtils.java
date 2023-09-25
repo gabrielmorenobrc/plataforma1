@@ -5,10 +5,6 @@ import org.apache.derby.drda.NetworkServerControl;
 import java.io.File;
 import java.util.logging.Logger;
 
-/**
-
- */
-
 public class DerbyUtils {
 
     private static final Logger logger = Logger.getLogger(DerbyUtils.class.getName());

@@ -1,7 +1,7 @@
 package plataforma1.email;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Alternative;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.inject.Alternative;
 import java.text.MessageFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;

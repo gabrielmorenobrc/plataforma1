@@ -58,104 +58,167 @@
 
     <!-- JDK definitions -->
 
-    <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
-    <path id="jdk.classpath.1.8">
-        <fileset dir="${jdk.home.1.8}">
-            <include name="jre/lib/charsets.jar"/>
-            <include name="jre/lib/deploy.jar"/>
-            <include name="jre/lib/ext/access-bridge-64.jar"/>
-            <include name="jre/lib/ext/cldrdata.jar"/>
-            <include name="jre/lib/ext/dnsns.jar"/>
-            <include name="jre/lib/ext/jaccess.jar"/>
-            <include name="jre/lib/ext/jfxrt.jar"/>
-            <include name="jre/lib/ext/localedata.jar"/>
-            <include name="jre/lib/ext/nashorn.jar"/>
-            <include name="jre/lib/ext/sunec.jar"/>
-            <include name="jre/lib/ext/sunjce_provider.jar"/>
-            <include name="jre/lib/ext/sunmscapi.jar"/>
-            <include name="jre/lib/ext/sunpkcs11.jar"/>
-            <include name="jre/lib/ext/zipfs.jar"/>
-            <include name="jre/lib/javaws.jar"/>
-            <include name="jre/lib/jce.jar"/>
-            <include name="jre/lib/jfr.jar"/>
-            <include name="jre/lib/jfxswt.jar"/>
-            <include name="jre/lib/jsse.jar"/>
-            <include name="jre/lib/management-agent.jar"/>
-            <include name="jre/lib/plugin.jar"/>
-            <include name="jre/lib/resources.jar"/>
-            <include name="jre/lib/rt.jar"/>
+    <property name="jdk.bin.17" value="${jdk.home.17}/bin"/>
+    <path id="jdk.classpath.17">
+        <fileset dir="${jdk.home.17}">
+            <include name="../jdk-17.0.3.1!/java.base"/>
+            <include name="../jdk-17.0.3.1!/java.compiler"/>
+            <include name="../jdk-17.0.3.1!/java.datatransfer"/>
+            <include name="../jdk-17.0.3.1!/java.desktop"/>
+            <include name="../jdk-17.0.3.1!/java.instrument"/>
+            <include name="../jdk-17.0.3.1!/java.logging"/>
+            <include name="../jdk-17.0.3.1!/java.management"/>
+            <include name="../jdk-17.0.3.1!/java.management.rmi"/>
+            <include name="../jdk-17.0.3.1!/java.naming"/>
+            <include name="../jdk-17.0.3.1!/java.net.http"/>
+            <include name="../jdk-17.0.3.1!/java.prefs"/>
+            <include name="../jdk-17.0.3.1!/java.rmi"/>
+            <include name="../jdk-17.0.3.1!/java.scripting"/>
+            <include name="../jdk-17.0.3.1!/java.se"/>
+            <include name="../jdk-17.0.3.1!/java.security.jgss"/>
+            <include name="../jdk-17.0.3.1!/java.security.sasl"/>
+            <include name="../jdk-17.0.3.1!/java.smartcardio"/>
+            <include name="../jdk-17.0.3.1!/java.sql"/>
+            <include name="../jdk-17.0.3.1!/java.sql.rowset"/>
+            <include name="../jdk-17.0.3.1!/java.transaction.xa"/>
+            <include name="../jdk-17.0.3.1!/java.xml"/>
+            <include name="../jdk-17.0.3.1!/java.xml.crypto"/>
+            <include name="../jdk-17.0.3.1!/jdk.accessibility"/>
+            <include name="../jdk-17.0.3.1!/jdk.attach"/>
+            <include name="../jdk-17.0.3.1!/jdk.charsets"/>
+            <include name="../jdk-17.0.3.1!/jdk.compiler"/>
+            <include name="../jdk-17.0.3.1!/jdk.crypto.cryptoki"/>
+            <include name="../jdk-17.0.3.1!/jdk.crypto.ec"/>
+            <include name="../jdk-17.0.3.1!/jdk.crypto.mscapi"/>
+            <include name="../jdk-17.0.3.1!/jdk.dynalink"/>
+            <include name="../jdk-17.0.3.1!/jdk.editpad"/>
+            <include name="../jdk-17.0.3.1!/jdk.hotspot.agent"/>
+            <include name="../jdk-17.0.3.1!/jdk.httpserver"/>
+            <include name="../jdk-17.0.3.1!/jdk.incubator.foreign"/>
+            <include name="../jdk-17.0.3.1!/jdk.incubator.vector"/>
+            <include name="../jdk-17.0.3.1!/jdk.internal.ed"/>
+            <include name="../jdk-17.0.3.1!/jdk.internal.jvmstat"/>
+            <include name="../jdk-17.0.3.1!/jdk.internal.le"/>
+            <include name="../jdk-17.0.3.1!/jdk.internal.opt"/>
+            <include name="../jdk-17.0.3.1!/jdk.internal.vm.ci"/>
+            <include name="../jdk-17.0.3.1!/jdk.internal.vm.compiler"/>
+            <include name="../jdk-17.0.3.1!/jdk.internal.vm.compiler.management"/>
+            <include name="../jdk-17.0.3.1!/jdk.jartool"/>
+            <include name="../jdk-17.0.3.1!/jdk.javadoc"/>
+            <include name="../jdk-17.0.3.1!/jdk.jcmd"/>
+            <include name="../jdk-17.0.3.1!/jdk.jconsole"/>
+            <include name="../jdk-17.0.3.1!/jdk.jdeps"/>
+            <include name="../jdk-17.0.3.1!/jdk.jdi"/>
+            <include name="../jdk-17.0.3.1!/jdk.jdwp.agent"/>
+            <include name="../jdk-17.0.3.1!/jdk.jfr"/>
+            <include name="../jdk-17.0.3.1!/jdk.jlink"/>
+            <include name="../jdk-17.0.3.1!/jdk.jpackage"/>
+            <include name="../jdk-17.0.3.1!/jdk.jshell"/>
+            <include name="../jdk-17.0.3.1!/jdk.jsobject"/>
+            <include name="../jdk-17.0.3.1!/jdk.jstatd"/>
+            <include name="../jdk-17.0.3.1!/jdk.localedata"/>
+            <include name="../jdk-17.0.3.1!/jdk.management"/>
+            <include name="../jdk-17.0.3.1!/jdk.management.agent"/>
+            <include name="../jdk-17.0.3.1!/jdk.management.jfr"/>
+            <include name="../jdk-17.0.3.1!/jdk.naming.dns"/>
+            <include name="../jdk-17.0.3.1!/jdk.naming.rmi"/>
+            <include name="../jdk-17.0.3.1!/jdk.net"/>
+            <include name="../jdk-17.0.3.1!/jdk.nio.mapmode"/>
+            <include name="../jdk-17.0.3.1!/jdk.random"/>
+            <include name="../jdk-17.0.3.1!/jdk.sctp"/>
+            <include name="../jdk-17.0.3.1!/jdk.security.auth"/>
+            <include name="../jdk-17.0.3.1!/jdk.security.jgss"/>
+            <include name="../jdk-17.0.3.1!/jdk.unsupported"/>
+            <include name="../jdk-17.0.3.1!/jdk.unsupported.desktop"/>
+            <include name="../jdk-17.0.3.1!/jdk.xml.dom"/>
+            <include name="../jdk-17.0.3.1!/jdk.zipfs"/>
         </fileset>
     </path>
 
-    <property name="project.jdk.home" value="${jdk.home.1.8}"/>
-    <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
-    <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
+    <property name="project.jdk.home" value="${jdk.home.17}"/>
+    <property name="project.jdk.bin" value="${jdk.bin.17}"/>
+    <property name="project.jdk.classpath" value="jdk.classpath.17"/>
 
 
     <!-- Project Libraries -->
 
     <path id="library.lib.classpath">
-        <fileset dir="${basedir}/../lib/asm/5.0.4">
+        <fileset dir="${basedir}/../lib/angus/2.0.1">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/cdi-api/1.2.0">
+        <fileset dir="${basedir}/../lib/asm/9.5">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/commons-collections/3.3.2">
+        <fileset dir="${basedir}/../lib/bouncycastle/1.70">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/derby/10.8">
+        <fileset dir="${basedir}/../lib/cdi-api/2.0">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/el-api/2.2">
+        <fileset dir="${basedir}/../lib/commons-codec/1.16.0">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/fliyingsaucer/9.0.7">
+        <fileset dir="${basedir}/../lib/commons-collections/4.4.4">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/freemarker/2.3.20">
+        <fileset dir="${basedir}/../lib/commons-imaging/1.0">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/itext/5.5.3">
+        <fileset dir="${basedir}/../lib/commons-io/2.13.0">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/jackson/2.6.4">
+        <fileset dir="${basedir}/../lib/derby/10.16">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/javamail/1.5.0">
+        <fileset dir="${basedir}/../lib/fliyingsaucer/9.2.2">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/jersey/1.5">
+        <fileset dir="${basedir}/../lib/freemarker/2.3.32">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/jetty/8.1.15">
+        <fileset dir="${basedir}/../lib/itext/5.5.13.3">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/jpa/2.0">
+        <fileset dir="${basedir}/../lib/jackson/2.15.2">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/json/20160810">
+        <fileset dir="${basedir}/../lib/jakarta/4.0.0">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/jsp-api/2.1">
+        <fileset dir="${basedir}/../lib/jaxb/4.0.3">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/servlet-api/3.0">
+        <fileset dir="${basedir}/../lib/jdk/1.9.0">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/slf4j/1.7.10">
+        <fileset dir="${basedir}/../lib/jersey/3.1.3">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/weld/2.2.9">
+        <fileset dir="${basedir}/../lib/jetty/12.0.1">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/wicket-jquery/6.9.0">
+        <fileset dir="${basedir}/../lib/joda-time/2.12.5">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/wicket-select2/2.3">
+        <fileset dir="${basedir}/../lib/json/20230618">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/wicket/6.24.0">
+        <fileset dir="${basedir}/../lib/openjson/1.0.12">
+            <patternset refid="library.patterns"/>
+        </fileset>
+        <fileset dir="${basedir}/../lib/slf4j/2.0.9">
+            <patternset refid="library.patterns"/>
+        </fileset>
+        <fileset dir="${basedir}/../lib/weld/5.1.1">
+            <patternset refid="library.patterns"/>
+        </fileset>
+        <fileset dir="${basedir}/../lib/wicket-jquery/10.0.0">
+            <patternset refid="library.patterns"/>
+        </fileset>
+        <fileset dir="${basedir}/../lib/wicket-select2/4.1">
+            <patternset refid="library.patterns"/>
+        </fileset>
+        <fileset dir="${basedir}/../lib/wicket/10.0.0">
             <patternset refid="library.patterns"/>
         </fileset>
     </path>

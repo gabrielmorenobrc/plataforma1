@@ -7,6 +7,8 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.PropertyModel;
 
+import java.util.Optional;
+
 public class NotifierPanel extends Panel {
 
     private final WebMarkupContainer popup;
@@ -38,23 +40,24 @@ public class NotifierPanel extends Panel {
     public void notify(String title, String message, Component targetComponent) {
         this.title = title;
         this.message = message;
-        AjaxRequestTarget ajaxRequestTarget = getRequestCycle().find(AjaxRequestTarget.class);
-        ajaxRequestTarget.add(this);
-        ajaxRequestTarget.appendJavaScript(
-                "clearTimeout(window.notifierTimeout);\n;" +
-                        "$('#" + popup.getMarkupId() + "').show();\n" +
-                        "window.notifierTimeout = window.setTimeout(function(){ $('#" + notifierBehavior.getMarkupId() + "').find('.notifier').hide() }, " + duration + ");\n");
-        if (targetComponent != null) {
-            String js = "var top = document.getElementById('" + targetComponent.getMarkupId() + "').getBoundingClientRect().top ;\n"
-                    + " var h = document.getElementById('" + popup.getMarkupId() + "').clientHeight;\n"
-                    + " var offset = top - h; if (offset < 0) {offset = 0};\n"
-                    + "document.getElementById('" + popup.getMarkupId() + "').style.top = offset + 'px';\n";
-            ajaxRequestTarget.appendJavaScript(js);
+        Optional<AjaxRequestTarget> ajaxRequestTarget = getRequestCycle().find(AjaxRequestTarget.class);
+        if (ajaxRequestTarget.isPresent()) {
+            ajaxRequestTarget.get().add(this);
+            ajaxRequestTarget.get().appendJavaScript(
+                    "clearTimeout(window.notifierTimeout);\n;" +
+                            "$('#" + popup.getMarkupId() + "').show();\n" +
+                            "window.notifierTimeout = window.setTimeout(function(){ $('#" + notifierBehavior.getMarkupId() + "').find('.notifier').hide() }, " + duration + ");\n");
+            if (targetComponent != null) {
+                String js = "var top = document.getElementById('" + targetComponent.getMarkupId() + "').getBoundingClientRect().top ;\n"
+                        + " var h = document.getElementById('" + popup.getMarkupId() + "').clientHeight;\n"
+                        + " var offset = top - h; if (offset < 0) {offset = 0};\n"
+                        + "document.getElementById('" + popup.getMarkupId() + "').style.top = offset + 'px';\n";
+                ajaxRequestTarget.get().appendJavaScript(js);
+            }
+            if (onShow != null) {
+                ajaxRequestTarget.get().appendJavaScript(onShow);
+            }
         }
-        if (onShow != null) {
-            ajaxRequestTarget.appendJavaScript(onShow);
-        }
-
     }
 
     public void setOnShow(String onShow) {

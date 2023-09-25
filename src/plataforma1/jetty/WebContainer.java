@@ -1,9 +1,8 @@
 package plataforma1.jetty;
 
-import org.eclipse.jetty.security.HashLoginService;
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.server.nio.SelectChannelConnector;
+import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.webapp.WebAppContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,11 +12,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
-/**
-
- */
 public class WebContainer {
-
     private static final Logger logger = LoggerFactory.getLogger(WebContainer.class.getName());
     private static final Properties properties;
 
@@ -51,21 +46,20 @@ public class WebContainer {
     }
 
     private void startWebServer() throws Exception {
-        Server server = new Server();
-        Connector connector = new SelectChannelConnector();
-        int port = new Integer(properties.getProperty(WEBCONTAINER_PORT, DEFAULT_PORT));
-        connector.setPort(port);
+        int port = Integer.valueOf(properties.getProperty(WEBCONTAINER_PORT, DEFAULT_PORT));
+        Server server = new Server(port);
+        Connector connector = new ServerConnector(server);
         server.addConnector(connector);
         String webapp = properties.getProperty(WEBCONTAINER_WEBAPP, DEFAULT_WEBAPP);
         String context = properties.getProperty(WEBCONTAINER_CONTEXT, "/");
         WebAppContext wac = new WebAppContext(webapp, context);
 
-        File file = new File("realm.properties");
-        if (file.exists()) {
-            HashLoginService loginService = new HashLoginService("realm", "realm.properties");
-            wac.getSecurityHandler().setLoginService(loginService);
-            server.addBean(loginService);
-        }
+//        File file = new File("realm.properties");
+//        if (file.exists()) {
+//            HashLoginService loginService = new HashLoginService("realm", "realm.properties");
+//            wac.getSecurityHandler().setLoginService(loginService);
+//            server.addBean(loginService);
+//        }
 
         server.setHandler(wac);
         server.setStopAtShutdown(true);

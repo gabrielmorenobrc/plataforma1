@@ -1,7 +1,7 @@
 package plataforma1.util;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Alternative;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.inject.Alternative;
 
 @ApplicationScoped
 @Alternative

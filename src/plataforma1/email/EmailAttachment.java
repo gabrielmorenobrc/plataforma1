@@ -1,7 +1,7 @@
 package plataforma1.email;
 
+import jakarta.activation.DataSource;
 
-import javax.activation.DataSource;
 import java.io.Serializable;
 
 public class EmailAttachment implements Serializable {

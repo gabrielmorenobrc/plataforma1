@@ -1,6 +1,6 @@
 package plataforma1.email;
 
-import javax.enterprise.inject.Alternative;
+import jakarta.enterprise.inject.Alternative;
 
 @Alternative
 public class DummyEmailConfig implements EmailConfig {

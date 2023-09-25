@@ -1,14 +1,10 @@
 package plataforma1.test;
 
+import jakarta.enterprise.inject.spi.BeanManager;
+import jakarta.inject.Inject;
 import org.apache.wicket.cdi.CdiConfiguration;
 import org.apache.wicket.util.tester.WicketTester;
 
-import javax.enterprise.inject.spi.BeanManager;
-import javax.inject.Inject;
-
-/**
-
- */
 public class AbstractTestCase {
     @Inject
     private TestContext testContext;
@@ -24,7 +20,7 @@ public class AbstractTestCase {
         if (wicketTester == null) {
             wicketTester = new WicketTester();
             BeanManager bm = testContext.getBeanManager();
-            new CdiConfiguration(bm).configure(wicketTester.getApplication());
+            new CdiConfiguration().setFallbackBeanManager(bm).configure(wicketTester.getApplication());
         }
         return wicketTester;
     }

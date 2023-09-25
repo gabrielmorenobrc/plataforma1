@@ -3,9 +3,6 @@ package plataforma1.test;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/**
-
- */
 public class TestRunnerClient {
 
     private Integer port;

@@ -1,11 +1,9 @@
 package plataforma1.test;
 
-import javax.enterprise.context.RequestScoped;
-import javax.enterprise.inject.spi.BeanManager;
 
-/**
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.enterprise.inject.spi.BeanManager;
 
- */
 @RequestScoped
 public class TestContext {
 

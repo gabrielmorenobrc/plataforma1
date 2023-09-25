@@ -7,6 +7,7 @@ import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.apache.wicket.resource.JQueryResourceReference;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class InputmaskResourceReference extends JavaScriptResourceReference {
 
@@ -21,8 +22,8 @@ public class InputmaskResourceReference extends JavaScriptResourceReference {
     }
 
     @Override
-    public Iterable<? extends HeaderItem> getDependencies() {
-        JavaScriptReferenceHeaderItem jquery = JavaScriptHeaderItem.forReference(JQueryResourceReference.get());
+    public List<HeaderItem> getDependencies() {
+        JavaScriptReferenceHeaderItem jquery = JavaScriptHeaderItem.forReference(JQueryResourceReference.getV3());
 //        JavaScriptReferenceHeaderItem jquery = JavaScriptHeaderItem.forReference(JQuery3_1_1ResourceReference.get());
 //        JavaScriptHeaderItem phone = JavaScriptHeaderItem.forReference(new JavaScriptResourceReference(InputmaskResourceReference.class, "dist/inputmask/phone-codes/phone.js"));
 //        JavaScriptHeaderItem phone_be = JavaScriptHeaderItem.forReference(new JavaScriptResourceReference(InputmaskResourceReference.class, "dist/inputmask/phone-codes/phone-be.js"));

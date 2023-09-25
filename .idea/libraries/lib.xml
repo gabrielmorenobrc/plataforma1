@@ -1,52 +1,61 @@
 <component name="libraryTable">
   <library name="lib">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/../lib/slf4j/1.7.10" />
-      <root url="file://$PROJECT_DIR$/../lib/jsp-api/2.1" />
-      <root url="file://$PROJECT_DIR$/../lib/servlet-api/3.0" />
-      <root url="file://$PROJECT_DIR$/../lib/json/20160810" />
-      <root url="file://$PROJECT_DIR$/../lib/jpa/2.0" />
-      <root url="file://$PROJECT_DIR$/../lib/jetty/8.1.15" />
-      <root url="file://$PROJECT_DIR$/../lib/jersey/1.5" />
-      <root url="file://$PROJECT_DIR$/../lib/javamail/1.5.0" />
-      <root url="file://$PROJECT_DIR$/../lib/jackson/2.6.4" />
-      <root url="file://$PROJECT_DIR$/../lib/el-api/2.2" />
-      <root url="file://$PROJECT_DIR$/../lib/derby/10.8" />
-      <root url="file://$PROJECT_DIR$/../lib/commons-collections/3.3.2" />
-      <root url="file://$PROJECT_DIR$/../lib/cdi-api/1.2.0" />
-      <root url="file://$PROJECT_DIR$/../lib/asm/5.0.4" />
-      <root url="file://$PROJECT_DIR$/../lib/weld/2.2.9" />
-      <root url="file://$PROJECT_DIR$/../lib/wicket/6.24.0" />
-      <root url="file://$PROJECT_DIR$/../lib/wicket-jquery/6.9.0" />
-      <root url="file://$PROJECT_DIR$/../lib/javamail/1.5.0" />
-      <root url="file://$PROJECT_DIR$/../lib/slf4j/1.7.10" />
-      <root url="file://$PROJECT_DIR$/../lib/fliyingsaucer/9.0.7" />
-      <root url="file://$PROJECT_DIR$/../lib/freemarker/2.3.20" />
-      <root url="file://$PROJECT_DIR$/../lib/itext/5.5.3" />
-      <root url="file://$PROJECT_DIR$/../lib/wicket-select2/2.3" />
+      <root url="file://$PROJECT_DIR$/../lib/angus/2.0.1" />
+      <root url="file://$PROJECT_DIR$/../lib/asm/9.5" />
+      <root url="file://$PROJECT_DIR$/../lib/bouncycastle/1.70" />
+      <root url="file://$PROJECT_DIR$/../lib/cdi-api/2.0" />
+      <root url="file://$PROJECT_DIR$/../lib/commons-codec/1.16.0" />
+      <root url="file://$PROJECT_DIR$/../lib/commons-collections/4.4.4" />
+      <root url="file://$PROJECT_DIR$/../lib/commons-imaging/1.0" />
+      <root url="file://$PROJECT_DIR$/../lib/commons-io/2.13.0" />
+      <root url="file://$PROJECT_DIR$/../lib/derby/10.16" />
+      <root url="file://$PROJECT_DIR$/../lib/fliyingsaucer/9.2.2" />
+      <root url="file://$PROJECT_DIR$/../lib/freemarker/2.3.32" />
+      <root url="file://$PROJECT_DIR$/../lib/itext/5.5.13.3" />
+      <root url="file://$PROJECT_DIR$/../lib/jackson/2.15.2" />
+      <root url="file://$PROJECT_DIR$/../lib/jakarta/4.0.0" />
+      <root url="file://$PROJECT_DIR$/../lib/jaxb/4.0.3" />
+      <root url="file://$PROJECT_DIR$/../lib/jdk/1.9.0" />
+      <root url="file://$PROJECT_DIR$/../lib/jersey/3.1.3" />
+      <root url="file://$PROJECT_DIR$/../lib/jetty/12.0.1" />
+      <root url="file://$PROJECT_DIR$/../lib/joda-time/2.12.5" />
+      <root url="file://$PROJECT_DIR$/../lib/json/20230618" />
+      <root url="file://$PROJECT_DIR$/../lib/openjson/1.0.12" />
+      <root url="file://$PROJECT_DIR$/../lib/slf4j/2.0.9" />
+      <root url="file://$PROJECT_DIR$/../lib/weld/5.1.1" />
+      <root url="file://$PROJECT_DIR$/../lib/wicket-jquery/10.0.0" />
+      <root url="file://$PROJECT_DIR$/../lib/wicket-select2/4.1" />
+      <root url="file://$PROJECT_DIR$/../lib/wicket/10.0.0" />
+      <root url="jar://$PROJECT_DIR$/../lib/jetty/12.0.1/jetty-util-12.0.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/asm/5.0.4" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/cdi-api/1.2.0" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/commons-collections/3.3.2" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/derby/10.8" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/el-api/2.2" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/fliyingsaucer/9.0.7" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/freemarker/2.3.20" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/itext/5.5.3" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/jackson/2.6.4" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/javamail/1.5.0" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/jersey/1.5" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/jetty/8.1.15" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/jpa/2.0" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/json/20160810" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/jsp-api/2.1" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/servlet-api/3.0" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/slf4j/1.7.10" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/weld/2.2.9" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/wicket-jquery/6.9.0" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/wicket-select2/2.3" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../lib/wicket/6.24.0" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/angus/2.0.1" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/asm/9.5" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/bouncycastle/1.70" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/cdi-api/2.0" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/commons-codec/1.16.0" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/commons-collections/4.4.4" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/commons-imaging/1.0" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/commons-io/2.13.0" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/derby/10.16" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/fliyingsaucer/9.2.2" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/freemarker/2.3.32" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/itext/5.5.13.3" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/jackson/2.15.2" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/jakarta/4.0.0" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/jaxb/4.0.3" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/jdk/1.9.0" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/jersey/3.1.3" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/jetty/12.0.1" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/joda-time/2.12.5" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/json/20230618" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/openjson/1.0.12" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/slf4j/2.0.9" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/weld/5.1.1" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/wicket-jquery/10.0.0" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/wicket-select2/4.1" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/wicket/10.0.0" recursive="false" />
   </library>
 </component>

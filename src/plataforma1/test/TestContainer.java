@@ -1,8 +1,8 @@
 package plataforma1.test;
 
 import org.eclipse.jetty.server.Connector;
+import org.eclipse.jetty.server.LocalConnector;
 import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.server.nio.SelectChannelConnector;
 import org.eclipse.jetty.webapp.WebAppContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,9 +12,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
-/**
-
- */
 public class TestContainer {
 
     private static final String TESTCONTAINER_PORT = "testcontainer_port";
@@ -39,10 +36,9 @@ public class TestContainer {
     }
 
     private static void startWebServer() throws Exception {
-        server = new Server();
-        Connector connector = new SelectChannelConnector();
         int portNumber = Integer.valueOf(properties.getProperty(TESTCONTAINER_PORT, DEFAULT_PORT));
-        connector.setPort(portNumber);
+        server = new Server(portNumber);
+        Connector connector = new LocalConnector(server);
         server.addConnector(connector);
         WebAppContext wac = new WebAppContext("webapp", "/");
         wac.addServlet(TestRunnerServlet.class, "/test/*");

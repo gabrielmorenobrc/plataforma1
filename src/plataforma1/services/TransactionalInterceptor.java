@@ -1,12 +1,9 @@
 package plataforma1.services;
 
-import javax.interceptor.AroundInvoke;
-import javax.interceptor.InvocationContext;
-import javax.persistence.EntityManager;
+import jakarta.interceptor.AroundInvoke;
+import jakarta.interceptor.InvocationContext;
+import jakarta.persistence.EntityManager;
 
-/**
-
- */
 public abstract class TransactionalInterceptor {
 
     @AroundInvoke
