@@ -215,7 +215,7 @@
         <fileset dir="${basedir}/../lib/wicket-jquery/10.0.0">
             <patternset refid="library.patterns"/>
         </fileset>
-        <fileset dir="${basedir}/../lib/wicket-select2/4.1">
+        <fileset dir="${basedir}/../lib/wicket-select2/10.0.0">
             <patternset refid="library.patterns"/>
         </fileset>
         <fileset dir="${basedir}/../lib/wicket/10.0.0">
