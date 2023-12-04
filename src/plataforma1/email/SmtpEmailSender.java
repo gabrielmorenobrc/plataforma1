@@ -77,7 +77,7 @@ public class SmtpEmailSender implements EmailSender {
             Properties properties = new Properties();
             if (this.emailConfig.isUseStarttls()) {
                 properties.put("mail.smtp.starttls.enable", "true");
-                properties.put("mail.smtp.ssl.protocols", "TLSv1.2");
+                properties.put("mail.smtp.ssl.protocols", "TLSv1.3");
             }
 
             properties.put("mail.smtp.host", emailConfig.getSmtpHost());
